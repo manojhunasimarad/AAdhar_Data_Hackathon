@@ -1,0 +1,63 @@
+Cell 1 – Environment & execution mode (CPU/GPU)
+
+Cell 2 – Load raw CSV shards (no cleaning)
+
+Cell 3 – Schema validation + column sanity
+
+Cell 4 – Date parsing (single function)
+
+Cell 5 – State normalization + anomaly flag
+
+Cell 6 – District normalization (light only)
+
+Cell 7 – Totals computation
+
+Cell 8 – Pincode integrity checks
+
+Cell 9 – Center capability classification
+
+Cell 10 – Exact duplicate detection + logging
+
+Cell 11 – Aggregation per dataset
+
+Cell 12 – Cross-dataset combination
+
+Cell 13 – Geo ambiguity flags
+
+Cell 14 – Behavioral patterns
+
+Cell 15 – Visualization & correlations
+
+
+
+1️⃣ Robust statistical anomaly scoring
+2️⃣ KNN / LOF anomaly detection
+3️⃣ State-level heatmaps & temporal clustering
+4️⃣ External pincode/district enrichment
+5️⃣ Combine all anomaly signals into a final score
+
+👉 Your next move (choose ONE)
+
+1️⃣ Change-point detection (Bayesian / PELT)
+2️⃣ Hidden Markov Model for district regimes
+3️⃣ External calendar & election overlay
+4️⃣ Event/news API integration (interpretive only)
+
+
+✅ Time-slider dashboard (interactive)
+✅ Maps with color ramps (choropleths)
+✅ Drill-down district detail pages
+✅ State vs state comparison reports
+✅ Overlay governor party / GDP / literacy / AQI
+
+I can:
+
+add state-level heatmap
+
+add change-point dashboard
+
+prepare jury explanation script
+
+generate policy recommendation table
+
+Just say what’s next.
