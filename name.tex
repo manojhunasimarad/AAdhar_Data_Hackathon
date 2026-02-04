@@ -1,0 +1,215 @@
+\documentclass[11pt,a4paper]{article}
+
+% -------------------------------------------------
+% PACKAGES
+% -------------------------------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+\setstretch{1.15}
+
+% -------------------------------------------------
+% TITLE
+% -------------------------------------------------
+\title{
+\textbf{Unlocking Societal Trends in Aadhaar Enrolment and Updates} \\
+\vspace{0.3cm}
+\large An Explainable, Governance-Ready Anomaly and Persistence Analysis \\
+\vspace{0.3cm}
+\normalsize UIDAI Data Hackathon 2026
+}
+
+\author{
+Participant Name(s) \\
+Affiliation / Institution (if any)
+}
+
+\date{\today}
+
+% -------------------------------------------------
+% DOCUMENT
+% -------------------------------------------------
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+% -------------------------------------------------
+% ABSTRACT
+% -------------------------------------------------
+\begin{abstract}
+Aadhaar enrolment and update activities reflect not only identity management operations but also broader administrative, societal, and policy dynamics. Sudden surges, drops, or persistent imbalances in Aadhaar activity may indicate operational backlogs, administrative freezes, or systemic capacity mismatches.
+
+This study analyses Aadhaar biometric, demographic, and enrolment datasets provided by UIDAI to identify meaningful patterns, anomalies, and regime shifts using explainable statistical methods. By incorporating temporal baselines, change-point detection, persistence analysis, and composite anomaly scoring, the framework distinguishes transient noise from sustained structural issues.
+
+The results are translated into governance-ready insights through state-wise dashboards, district-level prioritisation, and an executive policy brief. The approach emphasises interpretability, reproducibility, and administrative applicability, enabling data-driven decision-making without assumptions of intent or wrongdoing.
+\end{abstract}
+
+\newpage
+
+% -------------------------------------------------
+\section{Problem Statement and Approach}
+% -------------------------------------------------
+
+Aadhaar enrolment and update data captures large-scale interactions between citizens and identity infrastructure. Understanding deviations in this activity can support proactive operational planning, audit prioritisation, and system improvement.
+
+The objective of this work is to:
+\begin{itemize}[leftmargin=*]
+    \item Identify meaningful patterns, trends, and anomalies in Aadhaar activity
+    \item Distinguish short-term fluctuations from persistent structural issues
+    \item Translate analytical findings into actionable administrative insights
+\end{itemize}
+
+The approach prioritises:
+\begin{itemize}[leftmargin=*]
+    \item Explainable statistical methods over black-box models
+    \item Persistence-based interpretation rather than one-day spikes
+    \item District-level granularity suitable for governance action
+\end{itemize}
+
+\newpage
+
+% -------------------------------------------------
+\section{Datasets Used}
+% -------------------------------------------------
+
+The analysis uses Aadhaar datasets provided by UIDAI as part of the hackathon.
+
+\subsection{Core UIDAI Datasets}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Biometric Dataset}
+    \begin{itemize}
+        \item Date, State, District, Pincode
+        \item Biometric updates (age 5–17, age 17+)
+    \end{itemize}
+
+    \item \textbf{Demographic Dataset}
+    \begin{itemize}
+        \item Date, State, District, Pincode
+        \item Demographic updates (age 5–17, age 17+)
+    \end{itemize}
+
+    \item \textbf{Enrolment Dataset}
+    \begin{itemize}
+        \item Date, State, District, Pincode
+        \item Enrolments (age 0–5, 5–17, 18+)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Supplementary Contextual Data}
+
+Supplementary datasets were used strictly for contextual interpretation:
+\begin{itemize}[leftmargin=*]
+    \item District-level population and literacy (Census)
+    \item State-level economic indicators
+    \item Election calendar metadata
+\end{itemize}
+
+No external data was used for anomaly detection.
+
+\newpage
+
+% -------------------------------------------------
+\section{Methodology}
+% -------------------------------------------------
+
+\subsection{Data Cleaning and Validation}
+Raw CSV shards were consolidated and validated. Geographic fields were standardised, dates strictly parsed, and exact duplicate rows removed to prevent artificial inflation.
+
+\subsection{Geographic Integrity Audits}
+Pincode-to-district and pincode-to-state mappings were audited to identify geographic ambiguities. Such cases were flagged rather than automatically corrected.
+
+\subsection{Temporal Aggregation}
+All datasets were aligned and aggregated to a district-day level to enable consistent cross-dataset analysis.
+
+\subsection{Anomaly Detection}
+Rolling baselines were used to detect abnormal deviations. Structural shocks were defined as biometric surges combined with enrolment drops.
+
+\subsection{Change-Point Detection}
+The PELT algorithm was applied to detect statistically significant regime shifts in district-level activity.
+
+\subsection{Persistence Analysis}
+Anomalies were classified based on duration:
+\begin{itemize}[leftmargin=*]
+    \item NEW (1–6 days)
+    \item PERSISTENT (7–20 days)
+    \item CHRONIC (21+ days)
+\end{itemize}
+
+\subsection{Composite Anomaly Scoring}
+Multiple signals were combined into a single explainable score, enabling ranking and prioritisation.
+
+\newpage
+
+% -------------------------------------------------
+\section{Data Analysis and Visualisation}
+% -------------------------------------------------
+
+\subsection{Key Findings}
+\begin{itemize}[leftmargin=*]
+    \item Most anomalies are transient and self-correcting
+    \item A smaller subset of districts exhibits persistent or chronic deviations
+    \item Change-points cluster temporally, indicating systemic events
+    \item Persistent anomalies are geographically concentrated
+\end{itemize}
+
+\subsection{Summary Figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{summary_figure_placeholder.png}
+\caption{From daily noise to actionable governance signals: detection, persistence, and prioritisation.}
+\end{figure}
+
+\newpage
+
+% -------------------------------------------------
+\section{Impact and Applicability}
+% -------------------------------------------------
+
+The proposed framework enables:
+\begin{itemize}[leftmargin=*]
+    \item Early warning dashboards for UIDAI and state registrars
+    \item Evidence-based audit prioritisation
+    \item Targeted administrative interventions
+    \item Transparent monitoring without speculative assumptions
+\end{itemize}
+
+The outputs are compatible with existing governance workflows.
+
+\newpage
+
+% -------------------------------------------------
+\section{Conclusion and Future Scope}
+% -------------------------------------------------
+
+This study demonstrates how explainable statistical analysis can unlock meaningful societal and administrative insights from Aadhaar data. By focusing on persistence and interpretability, the framework bridges the gap between analytics and governance action.
+
+Future extensions include interactive dashboards, automated reporting, and integration with operational planning systems.
+
+\newpage
+
+% -------------------------------------------------
+\section*{Reproducibility Note}
+% -------------------------------------------------
+
+All results in this report are reproducible by executing the accompanying Python code sequentially from data ingestion to policy-level summarisation.
+
+\end{document}
